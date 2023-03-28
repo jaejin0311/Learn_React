@@ -10,7 +10,7 @@ function App() {
     if (toDo === "") {
       return;
     }
-    setTodos((prev) => [toDo, ...prev]);
+    setTodos((cur) => [toDo, ...cur]);
     setToDo("");
   };
   
@@ -26,6 +26,10 @@ function App() {
         </input>
         <button>Add To Do</button>
       </form>
+      <hr />
+      {toDos.map((item, index) => (
+        <li key ={index}>{item}</li>
+      ))}
     </div>
   );
 }
